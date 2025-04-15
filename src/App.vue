@@ -1,6 +1,12 @@
 <script>
-export default {}
+import MButton from './components/MButton.vue'
+
+export default {
+  components: { MButton },
+}
 </script>
 <template>
-  <div></div>
+  <div>
+    <MButton caption="Войти" />
+  </div>
 </template>
