@@ -1,5 +1,7 @@
 import './assets/css/main.css'
 
+import 'materialize-css/dist/css/materialize.css'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 
