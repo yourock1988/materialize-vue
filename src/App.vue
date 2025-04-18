@@ -2,10 +2,10 @@
 import MButton from './components/MButton.vue'
 import MInputText from './components/MInputText.vue'
 import MFAB from './components/MFAB.vue'
-import SwitchesCheckbox from './components/SwitchesCheckbox.vue'
+import MSwitch from './components/MSwitch.vue'
 
 export default {
-  components: { MButton, MInputText, MFAB, SwitchesCheckbox },
+  components: { MButton, MInputText, MFAB, MSwitch },
 
   data() {
     return {
@@ -57,10 +57,7 @@ export default {
     </article>
 
     <article>
-      <SwitchesCheckbox
-        v-model:isUserReady="isUserReady"
-        :disabled="isDisabled"
-      />
+      <MSwitch v-model:isUserReady="isUserReady" :disabled="isDisabled" />
     </article>
   </section>
 </template>
