@@ -12,7 +12,6 @@ export default {
       message: '',
       isShowFAB: false,
       hasPulseFAB: false,
-      checked: false,
       isUserLoggedIn: false,
       isUserReady: false,
     }
@@ -45,14 +44,16 @@ export default {
 
     <article>
       <MButton
-        :caption="checked ? 'IsON' : 'IsOFF'"
-        @click="checked = !checked"
-        :is-toggle="!checked"
+        caption="isUserReady"
+        :is-show-icon="true"
+        :is-toggle="!isUserReady"
+        @click="isUserReady = !isUserReady"
       />
       <MButton
-        :caption="'IsEnable'"
-        @click="isUserReady = !isUserReady"
+        caption="isUserLoggedIn"
+        :is-show-icon="true"
         :is-toggle="isUserLoggedIn"
+        @click="isUserLoggedIn = !isUserLoggedIn"
       />
     </article>
 
@@ -62,6 +63,10 @@ export default {
         :is-disabled="isUserLoggedIn"
         caption="Готов"
       />
+    </article>
+
+    <article>
+      <MButton caption="Отправить" />
     </article>
   </section>
 </template>

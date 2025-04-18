@@ -1,12 +1,27 @@
 <script>
 export default {
-  props: ['caption', 'isToggle'],
+  props: {
+    caption: {
+      type: String,
+      default: 'Отправить',
+    },
+    isToggle: {
+      type: Boolean,
+      default: false,
+    },
+    isShowIcon: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>
 
 <template>
   <a class="waves-effect waves-light btn">
-    <i class="material-icons left">{{ isToggle ? 'remove' : 'add' }}</i>
+    <i v-if="isShowIcon" class="material-icons left">{{
+      isToggle ? 'remove' : 'add'
+    }}</i>
     <span>{{ caption }}</span>
   </a>
 </template>
