@@ -14,6 +14,7 @@ export default {
       hasPulseFAB: false,
       checked: false,
       isDisabled: false,
+      isUserReady: false,
     }
   },
 }
@@ -44,19 +45,22 @@ export default {
 
     <article>
       <MButton
-        :caption="checked ? 'ON' : 'OFF'"
+        :caption="checked ? 'IsON' : 'IsOFF'"
         @click="checked = !checked"
         :is-toggle="!checked"
       />
       <MButton
-        :caption="isDisabled ? 'Enable' : 'Disable'"
-        @click="isDisabled = !isDisabled"
+        :caption="'IsEnable'"
+        @click="isUserReady = !isUserReady"
         :is-toggle="isDisabled"
       />
     </article>
 
     <article>
-      <SwitchesCheckbox v-model:checked="checked" :disabled="isDisabled" />
+      <SwitchesCheckbox
+        v-model:isUserReady="isUserReady"
+        :disabled="isDisabled"
+      />
     </article>
   </section>
 </template>

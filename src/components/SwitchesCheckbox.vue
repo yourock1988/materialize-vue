@@ -1,16 +1,17 @@
 <script>
 export default {
-  props: {
-    checked: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  emits: ['update:checked'],
+  // props: {
+  //   checked: {
+  //     type: Boolean,
+  //     default: false,
+  //   },
+  //   disabled: {
+  //     type: Boolean,
+  //     default: false,
+  //   },
+  // },
+  props: ['disabled', 'isUserReady'],
+  emits: ['update:isUserReady'],
   data() {
     return {}
   },
@@ -22,7 +23,7 @@ export default {
     <label>
       Off
       <input
-        :checked="checked"
+        :checked="isUserReady"
         type="checkbox"
         @change="$emit('update:checked', $event.target.checked)"
         :disabled="disabled"
