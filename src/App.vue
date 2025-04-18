@@ -13,7 +13,7 @@ export default {
       isShowFAB: false,
       hasPulseFAB: false,
       checked: false,
-      isDisabled: false,
+      isUserLoggedIn: false,
       isUserReady: false,
     }
   },
@@ -52,12 +52,16 @@ export default {
       <MButton
         :caption="'IsEnable'"
         @click="isUserReady = !isUserReady"
-        :is-toggle="isDisabled"
+        :is-toggle="isUserLoggedIn"
       />
     </article>
 
     <article>
-      <MSwitch v-model:isUserReady="isUserReady" :disabled="isDisabled" />
+      <MSwitch
+        v-model="isUserReady"
+        :is-disabled="isUserLoggedIn"
+        caption="Готов"
+      />
     </article>
   </section>
 </template>
