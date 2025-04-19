@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://materializecss.com/extras/noUiSlider/nouislider.css"
+    />
+    <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
+  </head>
+  <body>
+    <br />
+    <br />
+    <form action="#">
+      <p class="range-field">
+        <input type="range" id="a" min="0" max="100" />
+      </p>
+      <div id="test-slider"></div>
+    </form>
+    <script>
+      console.log(M)
+      document.addEventListener('DOMContentLoaded', function () {
+        var instances = M.Range.init(a)
+        var slider = document.getElementById('test-slider')
+        noUiSlider.create(slider, {
+          start: [20, 80],
+          connect: true,
+          step: 1,
+          orientation: 'horizontal', // 'horizontal' or 'vertical'
+          range: {
+            min: 0,
+            max: 100,
+          },
+          format: wNumb({
+            decimals: 0,
+          }),
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <script>
-import 'nouislider/dist/nouislider.css'
+import 'materialize-css/extras/noUiSlider/nouislider.css'
 
-import noUiSlider from 'nouislider'
+import noUiSlider from 'materialize-css/extras/noUiSlider/nouislider.js'
 
 export default {
   mounted() {
