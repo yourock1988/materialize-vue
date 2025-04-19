@@ -4,20 +4,26 @@ import MInputText from './components/MInputText.vue'
 import MFAB from './components/MFAB.vue'
 import MSwitch from './components/MSwitch.vue'
 import MSlider from './components/MSlider.vue'
+import MmultipleSelect from './components/MmultipleSelect.vue'
 
 export default {
-  components: { MButton, MInputText, MFAB, MSwitch, MSlider },
+  components: { MButton, MInputText, MFAB, MSwitch, MSlider, MmultipleSelect },
 
   data() {
-    return {}
+    return {
+      selected: [],
+    }
   },
 }
 </script>
 
 <template>
   <section>
-    <article>
+    <!-- <article>
       <MSlider />
+    </article> -->
+    <article>
+      <MmultipleSelect />
     </article>
   </section>
 </template>
